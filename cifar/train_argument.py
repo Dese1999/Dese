@@ -19,9 +19,9 @@ def parser():
     parser.add_argument('--mask', action='store_true', help='whether to use masked model')
     parser.add_argument('--seed', type=int, default=1, help='The random seed')
     parser.add_argument('--batch_size', '-b', type=int, default=64, help='batch size')
-    parser.add_argument('--max_epoch', '-m_e', type=int, default=160, 
+    parser.add_argument('--max_epoch', '-m_e', type=int, default=100, 
         help='the maximum numbers of the model see a sample')
-    parser.add_argument('--learning_rate', '-lr', type=float, default=0.1, help='learning rate')
+    parser.add_argument('--learning_rate', '-lr', type=float, default=0.01, help='learning rate')
     parser.add_argument('--momentum', type=float, default=0.9, help="SGD momentum(defalt: 0.9)")
     parser.add_argument('--weight_decay', type=float, default=1e-4, help="SGD weight decay(defalt: 1e-4)")
     parser.add_argument('--n_eval_step', type=int, default=100, 
