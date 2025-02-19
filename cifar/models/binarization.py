@@ -54,7 +54,7 @@ class MaskedMLP(nn.Module):
         mask = self.step(abs_weight)
         ratio = torch.sum(mask) / mask.numel()
         #print("keep ratio {:.2f}".format(ratio))
-        if ratio <= 0.01:
+        if ratio <= 0.05:
             with torch.no_grad():
                 #std = self.weight.std()
                 self.threshold.data.fill_(0)
@@ -113,7 +113,7 @@ class MaskedConv2d(nn.Module):
         ratio = torch.sum(mask) / mask.numel()
         # print("threshold {:3f}".format(self.threshold[0]))
         # print("keep ratio {:.2f}".format(ratio))
-        if ratio <= 0.01:
+        if ratio <= 0.05:
             with torch.no_grad():
                 self.threshold.data.fill_(0.)
             threshold = self.threshold.view(weight_shape[0], -1)
